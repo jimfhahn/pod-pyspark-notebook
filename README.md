@@ -1,4 +1,4 @@
-# Transactional POD using PySpark
+# [Transactional POD using PySpark](https://github.com/jimfhahn/pod-pyspark-notbook/blob/main/pod-processing.ipynb)
 
 ## Overview
 The POD environment is designed as a data lake. To facilitate data processing, the MARC data is first loaded into Parquet format and then into Spark for processing using PySpark SQL.

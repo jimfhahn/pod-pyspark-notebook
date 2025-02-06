@@ -10,4 +10,4 @@ The POD environment is designed as a data lake. To facilitate data processing, t
 ## Requirements
 ### Python: Ensure you have Python => 3.11 installed.
 ### PySpark: Install PySpark to enable Spark processing.
-## Parquet: Use the Parquet file format for efficient data storage and retrieval.
+### Parquet: Use the Parquet file format for efficient data storage and retrieval.

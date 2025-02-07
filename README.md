@@ -14,5 +14,8 @@ The Parquet files are then loaded into Spark. Using PySpark SQL, various data pr
 Ensure you have Python => 3.11 installed.
 ### PySpark: 
 Install PySpark to enable Spark processing.
+### Marctable:
+[marctable](https://github.com/sul-dlss-labs/marctable) converts MARC bibliographic data (in transmission format or MARCXML) into tabular formats like CSV and Parquet. 
 ### Parquet: 
 Use the Parquet file format for efficient data storage and retrieval.
+

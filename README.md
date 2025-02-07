@@ -5,7 +5,7 @@ The POD environment is designed as a data lake. To facilitate data processing, t
 
 ## Steps
 ### Data Loading: 
-The MARC data is initially loaded into Parquet format. Parquet is a columnar storage file format optimized for use with big data processing frameworks.
+The MARC data is loaded into Parquet format using marctable. Parquet is a columnar storage file format optimized for use with big data processing frameworks.
 ### Data Processing: 
 The Parquet files are then loaded into Spark. Using PySpark SQL, various data processing tasks are performed to transform and analyze the data.
 

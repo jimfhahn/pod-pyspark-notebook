@@ -8,7 +8,7 @@ The POD environment is designed as a data lake. To facilitate data processing, t
 The MARC data is loaded into Parquet format using marctable. Parquet is a columnar storage file format optimized for use with big data processing frameworks.
 ### Data Processing: 
 The Parquet files are then loaded into Spark. Using PySpark SQL, various data processing tasks are performed to transform and analyze the data.
-### Post-Processing.ipynb:
+### [Post-Processing.ipynb](https://github.com/jimfhahn/pod-pyspark-notebook/blob/main/post-processing.ipynb):
 The primary goal of this notebook is to confirm that an item is **not** held by any BorrowDirect institution besides Penn. Only items with only Penn holdings are included in the final report.
 ## Requirements
 ### Python: 

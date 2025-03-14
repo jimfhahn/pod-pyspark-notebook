@@ -1,7 +1,7 @@
 # [Transactional POD using PySpark](https://github.com/jimfhahn/pod-pyspark-notbook/blob/main/pod-processing.ipynb)
 
 ## Overview
-The POD environment is designed as a data lake. To facilitate data processing, the MARC data is first loaded into Parquet format and then into Spark for processing using PySpark SQL. This notebook is designed to process the MARC data to identify items that are held only by Penn. It requires some post-processing steps described below to verify that an item is **not** held by any BorrowDirect institution besides Penn. Only items with only Penn holdings are included in the final report from the post-processing step.
+The POD environment is designed as a data lake. To facilitate data processing, the MARC data is first transformed into Parquet format and then into a PySpark system for processing using PySpark SQL. This notebook is designed to process the MARC data to identify items that are held only by Penn. It requires some post-processing steps described below to verify that an item is **not** held by any BorrowDirect institution besides Penn. Only items with only Penn holdings are included in the final report from the post-processing step.
 ## Steps
 ### Data Loading: 
 The MARC data is loaded into Parquet format using marctable. Parquet is a columnar storage file format optimized for use with big data processing frameworks.

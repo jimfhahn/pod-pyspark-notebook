@@ -21,3 +21,8 @@ Use the Parquet file format for efficient data storage and retrieval.
 ### Selenium web driver:
 To verfiy uniqueness of holdings, we use Selenium to scrape BorrowDirect holdings data based on BorrowDirect id.
 
+
+## Acknowledgements
+
+This project was developed with the help of [GitHub Copilot](https://github.com/features/copilot), an AI pair programmer that assisted with code suggestions.
+

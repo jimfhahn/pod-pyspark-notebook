@@ -1,0 +1,29 @@
+#ignore parquette files
+*.parquet
+#ignore python cache files
+__pycache__/
+*.pyc
+#ignore Jupyter Notebook checkpoints        
+.ipynb_checkpoints
+#ignore virtual environment
+venv/
+#ignore logs
+*.log
+#ignore data files
+*.csv
+*.txt
+#ignore .mrc
+*.mrc
+#ignore. gz
+*.gz
+#DS_Store
+.DS_Store
+# json and csv files
+*.json
+*.csv
+*.xlsx
+#ignore pod-processing-outputs
+pod-processing-outputs/
+pod-processing-outputs/final/
+pod-processing-outputs/logs/
+

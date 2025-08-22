@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project analyzes MARC bibliographic data from Ivy Plus libraries to identify unique holdings at the University of Pennsylvania. The analysis uses PySpark for distributed processing and implements sophisticated matching algorithms to determine which records are held exclusively by Penn within the consortium.
+This project analyzes MARC bibliographic data from Ivy Plus libraries to identify unique holdings at the University of Pennsylvania Libraries. The analysis uses PySpark for distributed processing and implements sophisticated matching algorithms to determine which records are held exclusively by Penn within the consortium.
 
 The system processes MARC data through several stages:
 1. Converts MARC files to Parquet format for efficient processing
@@ -63,8 +63,6 @@ pod-pyspark-notebook/
 - **CPU**: 12+ cores recommended
 - **Storage**: 1TB+ free disk space
 
-⚠️ **WARNING**: This notebook is NOT suitable for standard laptops/desktops. Running with the current configuration on insufficient hardware will cause system crashes.
-
 ### Software Requirements
 - **Python**: >= 3.11
 - **Java**: JDK 17 (OpenJDK recommended)
@@ -86,14 +84,7 @@ Ensure your MARC data is organized in the expected structure:
 - Or use raw institution files in `pod_[institution]/file/` directories
 - Include `hsp_removed_mmsid.txt` for HSP filtering
 
-### 2. Configure Spark (Important!)
-For smaller systems, adjust the Spark configuration in the notebook:
-```python
-.config("spark.driver.memory", "8g")  # Reduce from 260g
-.config("spark.driver.maxResultSize", "4g")  # Reduce from 200g
-```
-
-### 3. Run the Analysis
+### 2. Run the Analysis
 Open and run `pod-processing.ipynb` in Jupyter:
 ```bash
 jupyter notebook pod-processing.ipynb
@@ -107,7 +98,7 @@ The notebook will:
 5. Apply conservative filters
 6. Generate analysis reports and samples
 
-### 4. Output Files
+### 3. Output Files
 
 Key outputs in `pod-processing-outputs/`:
 - `all_records_exploded.parquet` - Exploded dataset with one row per identifier
@@ -197,8 +188,8 @@ The notebook includes several optimizations:
 
 1. **Out of Memory Errors**
    ```python
-   # Reduce memory allocation:
-   .config("spark.driver.memory", "8g")
+   # increase memory allocation:
+   .config("spark.driver.memory", "XXXg")
    .config("spark.sql.shuffle.partitions", "200")
    ```
 
@@ -216,16 +207,13 @@ The notebook includes several optimizations:
    - Verify Java 17 is installed: `java -version`
    - Set JAVA_HOME: `export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64`
 
-### Data Currency
-⚠️ **Important**: The analysis includes checks for data currency. Using outdated Penn data will produce inaccurate results. The notebook will warn if using data older than 1 year.
-
 ### Logging
 Processing logs are saved to `pod-processing-outputs/logs/marc2parquet.log`
 
 ## Version History
 
 ### VERSION 2.0 (Current)
-- Enhanced OCLC extraction (3x improvement)
+- Enhanced OCLC extraction
 - ISBN core matching for work-level deduplication
 - Multi-volume detection
 - F264 field support
@@ -244,5 +232,4 @@ Processing logs are saved to `pod-processing-outputs/logs/marc2parquet.log`
 This project was developed with assistance from:
 - [GitHub Copilot](https://github.com/features/copilot) - AI pair programming
 - [marctable](https://github.com/sul-dlss-labs/marctable) - MARC to Parquet conversion
-- [POD](https://pod.stanford.edu/) - Partnership for Object Description data lake
-- Ivy Plus Libraries Confederation - Data collaboration
+- [POD](https://pod.stanford.edu/) - The POD Aggregator is an open source system to aggregate MARC bibliographic and holdings data for institutions that participate in the Platform for Open Data (POD) initiative.

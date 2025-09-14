@@ -35,12 +35,23 @@ The system processes MARC data through several stages:
 - **Reproduction Removal**: Filters out records with F533 (reproduction note)
 - **HSP Record Removal**: Excludes Historical Society of Pennsylvania holdings
 
+### LLM Analysis Capabilities (NEW)
+- **Text Analysis**: Extract keywords and analyze title patterns in MARC records
+- **Publication Pattern Analysis**: Identify trends in publication years, languages, and subjects
+- **Duplicate Detection**: Advanced similarity-based duplicate record identification
+- **Record Validation**: Automated quality checks for MARC data integrity
+- **Batch Processing**: Efficient processing of large record sets
+
 ## Project Structure
 
 ```
 pod-pyspark-notebook/
 ├── pod-processing.ipynb          # Main analysis notebook
 ├── ivyplus-updated-marc-pyspark.ipynb  # MARC preprocessing notebook
+├── llm_api.py                    # LLM API server for text analysis
+├── llm_client.py                 # LLM client library
+├── LLM_README.md                 # LLM module documentation
+├── requirements.txt              # Python dependencies
 ├── pod-processing-outputs/       # All processing outputs
 │   ├── final/                   # Processed MARC files
 │   ├── export/                  # Export packages
